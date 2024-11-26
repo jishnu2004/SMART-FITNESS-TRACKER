@@ -1,0 +1,19 @@
+<div class="bg-white p-4 rounded-2xl shadow-lg flex items-center space-x-4 max-w-sm">
+    <!-- Icon Section (Dynamically show the icon) -->
+    <div class="flex-shrink-0">
+      <div class="p-3 bg-yellow-100 rounded-full">
+        <img *ngIf="icon" [src]="icon" alt="Icon" class="w-8 h-8" />
+        <!-- Fallback icon (if icon is not provided) -->
+        <svg *ngIf="!icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-8 h-8 text-yellow-500">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+        </svg>
+      </div>
+    </div>
+  
+    <!-- Text Section -->
+    <div>
+      <h3 class="text-lg font-bold text-gray-800">{{ title }}</h3>
+      <p class="text-sm text-yellow-500">{{ subtitle }}</p>
+    </div>
+  </div>
+  

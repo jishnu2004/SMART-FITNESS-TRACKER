@@ -1,0 +1,168 @@
+
+/* Overall page styling */
+body {
+    background: url('/assets/myapp/src/assets/high-angle-woman-with-fitness-tracker-mockup.jpg') no-repeat center center fixed;
+    background-color: #000000;
+    color: #c93434;
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+  
+  /* Container for login section */
+  .login-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+  }
+  
+  /* Welcome Section */
+  .welcome-section {
+    color: #181818;
+    font-size: 2.5rem;
+  }
+  
+  .welcome-section h1 {
+    margin-bottom: 20px;
+  }
+  
+  .skip-btn {
+    background-color: transparent;
+    border: 1px solid white;
+    color: white;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+  
+  /* Login card styling */
+  .login-card {
+    margin-top: 50px;
+    background-color: #282828;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+    width: 600px;
+  }
+  
+  .login-card h2 {
+    color: #ffffff;
+  }
+  
+  .login-card p {
+    color: #888888;
+    margin-bottom: 20px;
+  }
+  
+  /* Input field styling */
+  .input-group {
+    margin-bottom: 20px;
+  }
+  
+  .input-field {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #1e1e1e;
+    color: #fff;
+  }
+  
+  /* Options (Remember Me + Forgot Password) */
+  .options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .forgot-password {
+    color: #888888;
+    text-decoration: none;
+  }
+  
+  /* Login button */
+  .login-btn {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background: linear-gradient(90deg, #5b00ff, #00c4ff);
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  /* Social login section */
+  .social-login {
+    text-align: center;
+    margin: 20px 0;
+  }
+  
+  .social-login span {
+    color: #888888;
+  }
+  
+  .social-icons a img {
+    width: 30px;
+    margin: 0 10px;
+  }
+
+
+  .social-icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .social-icons a {
+    margin-right: 15px;  /* Adds spacing between icons */
+  }
+  
+  .social-icons a:last-child {
+    margin-right: 0;  /* Removes margin from the last icon */
+  }
+  
+
+  
+  /* Signup and footer links */
+  /* .signup-text {
+    text-align: center;
+    color: #888888;
+  }
+  
+  .signup-text a {
+    color: #5b00ff;
+    text-decoration: none;
+  } */
+  
+
+  .signup-link {
+    background: none;
+    border: none;
+    color: blue;
+    text-decoration: underline;
+    cursor: pointer;
+    font-size: inherit;
+    padding: 0;
+  }
+  
+  .signup-link:hover {
+    color: darkblue;  /* Optional: change color on hover */
+  }
+  
+
+
+  .footer-links {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+  
+  .footer-links a {
+    color: #888888;
+    text-decoration: none;
+  }
+  

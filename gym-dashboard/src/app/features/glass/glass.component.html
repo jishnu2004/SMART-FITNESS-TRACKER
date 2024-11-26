@@ -1,0 +1,43 @@
+<div class="relative flex items-center">
+  <!-- Glass Shape SVG -->
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 200 300"
+    class="w-full max-w-xs"
+    stroke="black"
+    fill="none"
+  >
+    <!-- Glass Shape -->
+    <polygon points="40,10 160,10 130,280 70,280" stroke-width="2" />
+
+    <!-- Water fill area -->
+    <path
+      [attr.d]="getWaterPath()"
+      fill="blue"
+    ></path>
+  </svg>
+
+  <!-- Controls -->
+  <div class="flex flex-col items-center justify-center ml-6 space-y-4">
+    <!-- Increase water level button -->
+    <button
+      class="bg-blue-500 text-white px-6 py-2 rounded"
+      (click)="increaseWaterLevel()"
+    >
+      +
+    </button>
+
+    <!-- Display current cup count -->
+    <div class="text-2xl font-bold">
+      {{ cupCounter() }} cups
+    </div>
+
+    <!-- Decrease water level button -->
+    <button
+      class="bg-blue-500 text-white px-6 py-2 rounded"
+      (click)="decreaseWaterLevel()"
+    >
+      -
+    </button>
+  </div>
+</div>

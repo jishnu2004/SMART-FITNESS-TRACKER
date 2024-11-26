@@ -1,0 +1,139 @@
+<main class="p-8">
+  <!-- Navbar -->
+  <app-navbar></app-navbar>
+
+  <!-- Add explicit gap between navbar and stats -->
+  <div class="mt-16">
+    <app-stats
+  [stats]="stats"
+  (dateChange)="onDateChange($event)"
+></app-stats>
+
+  </div>
+
+  <!-- Main Content -->
+  <section class="flex justify-between items-start mt-8">
+    <!-- Glass Component -->
+    <div class="flex flex-col items-center border border-gray-300 bg-white shadow rounded p-4 h-full">
+      <app-glass></app-glass>
+    </div>
+
+    <!-- Meals Section -->
+    <div class="flex-1 mx-6">
+      <div class="border border-gray-300 rounded p-4 shadow bg-white max-h-[500px] overflow-y-auto">
+        <h1 class="text-xl font-bold mb-4">Meals</h1>
+        <ul>
+          <li
+            *ngFor="let meal of meals"
+            class="border-b border-gray-200 py-2 last:border-b-0"
+          >
+            <strong>{{ meal.name }}</strong>
+            <div>
+              Calories: {{ meal.calories }}, Carbs: {{ meal.carbs }}, Fats:
+              {{ meal.fats }}, Protein: {{ meal.protein }}
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Buttons -->
+    <div class="flex flex-col justify-between w-1/4 h-[500px]">
+      <button
+        class="bg-purple-600 text-white text-lg font-semibold rounded shadow p-4 mb-4 hover:bg-purple-700 flex-1"
+        (click)="openAddFoodModal()"
+      >
+        Add Food
+      </button>
+      <button
+        class="bg-purple-600 text-white text-lg font-semibold rounded shadow p-4 hover:bg-purple-700 flex-1"
+      >
+        Add Food with Description
+      </button>
+    </div>
+  </section>
+
+  <!-- Modal for Adding Food -->
+  <div
+    *ngIf="isAddFoodModalOpen"
+    class="fixed inset-0 bg-gray-900 bg-opacity-50 flex justify-center items-center"
+  >
+    <div class="bg-white p-6 rounded-lg shadow-lg w-1/3">
+      <h2 class="text-xl font-bold mb-4">Add Food</h2>
+      <form>
+        <!-- Food Name -->
+        <div class="mb-4">
+          <label for="foodName" class="block text-gray-700 font-medium">Food Name</label>
+          <input
+            id="foodName"
+            type="text"
+            class="border border-gray-300 rounded p-2 w-full"
+            [(ngModel)]="newFood.name"
+            name="foodName"
+          />
+        </div>
+        <!-- Calories -->
+        <div class="mb-4">
+          <label for="calories" class="block text-gray-700 font-medium">Calories</label>
+          <input
+            id="calories"
+            type="number"
+            class="border border-gray-300 rounded p-2 w-full"
+            [(ngModel)]="newFood.calories"
+            name="calories"
+          />
+        </div>
+        <!-- Carbs -->
+        <div class="mb-4">
+          <label for="carbs" class="block text-gray-700 font-medium">Carbs</label>
+          <input
+            id="carbs"
+            type="number"
+            class="border border-gray-300 rounded p-2 w-full"
+            [(ngModel)]="newFood.carbs"
+            name="carbs"
+          />
+        </div>
+        <!-- Fats -->
+        <div class="mb-4">
+          <label for="fats" class="block text-gray-700 font-medium">Fats</label>
+          <input
+            id="fats"
+            type="number"
+            class="border border-gray-300 rounded p-2 w-full"
+            [(ngModel)]="newFood.fats"
+            name="fats"
+          />
+        </div>
+        <!-- Protein -->
+        <div class="mb-4">
+          <label for="protein" class="block text-gray-700 font-medium">Protein</label>
+          <input
+            id="protein"
+            type="number"
+            class="border border-gray-300 rounded p-2 w-full"
+            [(ngModel)]="newFood.protein"
+            name="protein"
+          />
+        </div>
+
+        <div class="flex justify-end space-x-4">
+          <button
+            type="button"
+            class="bg-gray-600 text-white rounded px-4 py-2"
+            (click)="closeAddFoodModal()"
+          >
+            Cancel
+          </button>
+          <button
+            type="button"
+            class="bg-blue-600 text-white rounded px-4 py-2"
+            (click)="addFood()"
+          >
+            Add
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</main>

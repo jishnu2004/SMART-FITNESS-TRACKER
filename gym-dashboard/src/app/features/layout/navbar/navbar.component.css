@@ -1,0 +1,20 @@
+nav {
+    position: relative;
+  }
+  
+  .group:hover .group-hover\\:block {
+    display: block;
+  }
+  
+  .group-hover\\:block {
+    display: none;
+  }
+  
+  .text-left {
+    text-align: left;
+  }
+  
+  .w-full {
+    width: 100%;
+  }
+  

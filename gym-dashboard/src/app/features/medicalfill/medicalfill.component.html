@@ -1,0 +1,181 @@
+<div class="full-height">
+  <div class="form-container">
+    <h2 class="text-center">YOU ARE IMPORTANT TO US</h2>
+    <p class="text-center">Confidential - Please answer the following questions correctly.</p>
+    
+    <form (ngSubmit)="onSubmit(medicalForm)" #medicalForm="ngForm" novalidate>
+      
+      <!-- Full Name -->
+      <div class="form-group">
+        <label><b>Full Name</b></label>
+        <div class="grid-2">
+          <input
+            type="text"
+            name="firstName"
+            placeholder="First Name"
+            ngModel
+            required
+            class="form-control"
+          />
+          <input
+            type="text"
+            name="lastName"
+            placeholder="Last Name"
+            ngModel
+            required
+            class="form-control"
+          />
+        </div>
+      </div>
+
+      <!-- Gender -->
+      <div class="form-group">
+        <label><b>Gender</b></label>
+        <div class="radio-group">
+          <label><input type="radio" name="gender" value="male" ngModel required /> Male</label>
+          <label><input type="radio" name="gender" value="female" ngModel required /> Female</label>
+          <label><input type="radio" name="gender" value="other" ngModel required /> Other</label>
+        </div>
+      </div>
+
+      <!-- Occupation -->
+      <div class="form-group">
+        <label><b>Occupation</b></label>
+        <input
+          type="text"
+          name="occupation"
+          placeholder="Occupation"
+          ngModel
+          required
+          class="form-control"
+        />
+      </div>
+
+      <!-- Contact Information -->
+      <div class="form-group"style="margin-bottom: 20px;">
+        <label><b>Phone Number</b></label>
+        <input
+          type="tel"
+          name="phoneNumber"
+          placeholder="Please enter a valid phone number"
+          ngModel
+          required
+          class="form-control"
+        />
+      </div>
+      <div class="form-group"style="margin-bottom: 20px;">
+        <label><b>Email</b></label>
+        <input
+          type="email"
+          name="email"
+          placeholder="example@example.com"
+          ngModel
+          required
+          class="form-control"
+        />
+      </div>
+
+      <!-- Address -->
+      <div class="form-group"style="margin-bottom: 20px;">
+        <label><b>Address</b></label>
+        <input
+          type="text"
+          name="address"
+          placeholder="Street Address"
+          ngModel
+          required
+          class="form-control"
+        />
+      </div>
+
+      <!-- Weight, Height, Age -->
+      <div class="grid-3"style="margin-bottom: 20px;">
+        <div>
+          <label><b>Weight</b></label>
+          <input type="number" name="weight" placeholder="Weight (kg)" ngModel required class="form-control" />
+        </div>
+        <div>
+          <label><b>Height</b></label>
+          <input type="number" name="height" placeholder="Height (cm)" ngModel required class="form-control" />
+        </div>
+        <div>
+          <label><b>Age</b></label>
+          <input type="number" name="age" placeholder="Age" ngModel required class="form-control" />
+        </div>
+      </div>
+
+      <!-- Blood Type -->
+      <div class="form-group" style="margin-bottom: 20px;">
+        <label><b>What is your blood type?</b></label>
+        <select name="bloodType" ngModel required class="form-control">
+          <option value="O+">O+</option>
+          <option value="O-">O-</option>
+          <option value="A+">A+</option>
+          <option value="A-">A-</option>
+          <option value="B+">B+</option>
+          <option value="B-">B-</option>
+          <option value="AB+">AB+</option>
+          <option value="AB-">AB-</option>
+        </select>
+      </div>
+
+      <!-- Activity Level -->
+      <div class="form-group"style="margin-bottom: 20px;">
+        <label><b>How active are you?</b></label>
+        <select name="activityLevel" ngModel required class="form-control">
+          <option value="no_activity">No Activity</option>
+          <option value="light_activity">Light Activity</option>
+          <option value="moderate_activity">Moderate Activity</option>
+          <option value="high_activity">Highly Active</option>
+        </select>
+      </div>
+      <div class="form-group"style="margin-bottom: 20px;">
+        <label><b>Do you suffer from or have suffered from any of the following diseases?</b></label>
+        <div class="checkbox-group">
+          <label><input type="checkbox" name="heartDisease" ngModel /> Heart Disease</label>
+          <label><input type="checkbox" name="diabetes" ngModel /> Diabetes</label>
+          <label><input type="checkbox" name="std" ngModel /> Sexually Transmitted Diseases</label>
+          <label><input type="checkbox" name="lungDisease" ngModel /> Lung Disease</label>
+          <label><input type="checkbox" name="allergicDisease" ngModel /> Allergic Disease</label>
+          <label><input type="checkbox" name="epilepsy" ngModel /> Epilepsy</label>
+          <label><input type="checkbox" name="jaundice" ngModel /> Jaundice (last one year)</label>
+          <label><input type="checkbox" name="faintingSpells" ngModel /> Fainting spells</label>
+          <label><input type="checkbox" name="cancer" ngModel /> Cancer/Malignant Disease</label>
+          <label><input type="checkbox" name="hepatitis" ngModel /> Hepatitis B/C</label>
+          <label><input type="checkbox" name="typhoid" ngModel /> Typhoid (last one year)</label>
+          <label><input type="checkbox" name="tuberculosis" ngModel /> Tuberculosis</label>
+          <label><input type="checkbox" name="kidneyDisease" ngModel /> Kidney Disease</label>
+          <label><input type="checkbox" name="bleedingTendency" ngModel /> Abnormal Bleeding Tendency</label>
+          <label><input type="checkbox" name="malaria" ngModel /> Malaria (six months)</label>
+        </div>
+      </div>
+
+      <div class="form-group"style="margin-bottom: 20px;">
+        <label><b>Are you taking or have you taken any of these in the past 72 hours?</b></label>
+        <div class="checkbox-group">
+          <label><input type="checkbox" name="antibiotics" ngModel /> Antibiotics</label>
+          <label><input type="checkbox" name="aspirin" ngModel /> Aspirin</label>
+          <label><input type="checkbox" name="alcohol" ngModel /> Alcohol</label>
+          <label><input type="checkbox" name="steroids" ngModel /> Steroids</label>
+          <label><input type="checkbox" name="vaccinations" ngModel /> Vaccinations</label>
+          <label><input type="checkbox" name="rabiesVaccine" ngModel /> Dog bite Rabies vaccine (1 year)</label>
+        </div>
+      </div>
+
+      <!-- Medical History -->
+      <div class="form-group"style="margin-bottom: 20px;">
+        <label><b>In the last six months, have you had any of the following?</b></label>
+        <div class="checkbox-group">
+          <label><input type="checkbox" name="physicalInjury" ngModel /> Physical Injury</label>
+          <label><input type="checkbox" name="depression" ngModel /> Depression</label>
+          <label><input type="checkbox" name="dentalExtraction" ngModel /> Dental Extraction</label>
+        </div>
+      </div>
+
+      <!-- Submit -->
+      <div>
+        <button type="submit" class="btn-submit">Submit</button>
+      </div>
+    </form>
+  </div>
+</div>

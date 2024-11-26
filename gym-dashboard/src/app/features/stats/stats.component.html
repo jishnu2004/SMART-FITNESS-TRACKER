@@ -1,0 +1,44 @@
+<div class="stats-container bg-gradient-to-r from-teal-500 to-purple-500 p-6 rounded-lg shadow-lg my-8">
+  <div class="stats-header flex flex-wrap md:flex-nowrap items-center justify-between w-full">
+    <!-- Left Section -->
+    <div class="date-navigation flex items-center text-white space-x-4">
+      <div class="date-display flex flex-col">
+        <span class="text-sm font-semibold opacity-90">Current Day</span>
+        <span class="text-3xl font-bold mt-1">{{ displayDate }}</span>
+      </div>
+      <div class="navigation-buttons flex space-x-2">
+        <button
+          (click)="goToPreviousDay()"
+          class="prev-day-button text-white hover:text-gray-300"
+          aria-label="Previous Day">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+          </svg>
+        </button>
+        <button
+          (click)="goToNextDay()"
+          class="next-day-button text-white hover:text-gray-300"
+          aria-label="Next Day">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Right Section -->
+    <div class="metrics-display flex justify-center items-center space-x-6 flex-wrap md:flex-nowrap w-full md:w-auto">
+      <div *ngFor="let metric of metrics" class="metric-card flex flex-col items-center">
+        <span class="metric-label text-gray-100 text-sm mb-2" [attr.aria-label]="metric.label">{{ metric.label }}</span>
+        <app-circular-progress-bar
+          [current]="metric.current"
+          [total]="metric.total"
+          [radius]="50"
+          [strokeWidth]="8"
+          [outerStrokeColor]="metric.color"
+          [innerStrokeColor]="'#e0e0e0'">
+        </app-circular-progress-bar>
+      </div>
+    </div>
+  </div>
+</div>

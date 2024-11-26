@@ -1,0 +1,28 @@
+<div class="relative flex items-center justify-center">
+  <svg [attr.width]="(radius * 2 + strokeWidth)" [attr.height]="(radius * 2 + strokeWidth)">
+    <!-- Background Circle -->
+    <circle
+      [attr.stroke-width]="strokeWidth"
+      [attr.r]="radius"
+      [attr.cx]="radius + strokeWidth / 2"
+      [attr.cy]="radius + strokeWidth / 2"
+      [attr.stroke]="innerStrokeColor"
+      fill="transparent"
+    />
+    <!-- Progress Circle -->
+    <circle
+      [attr.stroke-width]="strokeWidth"
+      [attr.r]="radius"
+      [attr.cx]="radius + strokeWidth / 2"
+      [attr.cy]="radius + strokeWidth / 2"
+      [attr.stroke]="outerStrokeColor"
+      fill="transparent"
+      [attr.stroke-dasharray]="circumference"
+      [attr.stroke-dashoffset]="strokeDashOffset"
+      stroke-linecap="round"
+      style="transition: stroke-dashoffset 0.5s ease"
+    />
+  </svg>
+  <!-- Display the Current/Total Inside the Circle -->
+  <span class="absolute text-xl font-semibold">{{ current }}/{{ total }}</span>
+</div>
